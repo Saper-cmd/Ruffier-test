@@ -133,8 +133,6 @@ class PulseMeasurementPage(Screen):
         next_button = Button(text="Next", size_hint=(0.5, 0.2), pos_hint={"center_x": 0.5})
         next_button.bind(on_press=self.go_to_next)
         layout.add_widget(next_button)
-+
-
     def go_to_next(self, instance):
         self.manager.current = "squats_instruction"
 
@@ -182,7 +180,7 @@ class PostSquatMeasurementPage(Screen):
         P2 = int(self.pulse1_input.text)
         P3 = int(self.pulse2_input.text)
 
-        ruffier_index = 12 #X(P1, P2, P3)  # Placeholder function
+        ruffier_index = 4 * (P1 + P2 + P3)  # Placeholder function
         heart_efficiency = "low" #test(ruffier_index, level="normal")  # Placeholder function
 
         results_page = self.manager.get_screen("results")
